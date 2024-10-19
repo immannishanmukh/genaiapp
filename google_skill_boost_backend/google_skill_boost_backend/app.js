@@ -1,6 +1,12 @@
 import express from "express";
 import cors from "cors";
 import mongoose, { Model } from "mongoose";
+const express = require('express')
+const app = express()
+app.use("/",(req,res) => {
+    res.send("server is running.");
+});
+app.listen(5000, console.log("server started"));
 const password=encodeURIComponent('UDAY0908');
 const url = `mongodb+srv://22a91a0515:${password}@cluster0.w3ges.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 mongoose.connect(url)
